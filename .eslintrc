@@ -1,0 +1,18 @@
+{
+    "parser": "babel-eslint",
+
+    "plugins": [
+      "react-native-globals"
+    ],
+
+    "rules": {
+        "quotes": [2, "double", {"avoidEscape": true}]
+    },
+  
+    "env": {
+      "react-native-globals/all": true
+    }
+}
+  
+        
+        
