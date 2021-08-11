@@ -17,6 +17,7 @@ const Search = () => {
         <SearchContainer>
             <StyledSearchbar
                 placeholder="Search for a location"
+                icon="map"
                 onChangeText={(text) => {
                     setSearchKeyword(text);
                 }}
