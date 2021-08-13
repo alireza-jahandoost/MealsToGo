@@ -3,6 +3,7 @@ import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import {ThemeProvider} from 'styled-components/native';
 import {RestaurantsContextProvider} from './src/services/restaurants/restaurants.context';
 import {LocationContextProvider} from './src/services/location/location.context';
+import {FavoritesContextProvider} from './src/services/favorites/favorites.context';
 import {theme} from './src/infrastructure/theme';
 
 import {useFonts as useOswald,Oswald_400Regular} from '@expo-google-fonts/oswald';
@@ -23,11 +24,13 @@ export default function App() {
 
     return (
         <ThemeProvider theme={theme}>
-            <LocationContextProvider>
-                <RestaurantsContextProvider>
-                    <Navigation/>
-                </RestaurantsContextProvider>
-            </LocationContextProvider>
+            <FavoritesContextProvider>
+                <LocationContextProvider>
+                    <RestaurantsContextProvider>
+                        <Navigation/>
+                    </RestaurantsContextProvider>
+                </LocationContextProvider>
+            </FavoritesContextProvider>
             <ExpoStatusBar style="auto" />
         </ThemeProvider>
     );

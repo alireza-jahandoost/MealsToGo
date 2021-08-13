@@ -12,6 +12,7 @@ import {
     InnerSection,
 } from './restaurant-info-card.styles';
 import {Spacer} from '../../../../components/spacer/spacer.component';
+import Favorite from '../../../../components/favorite/favorite.component';
 
 const RestaurantInfoCard = ({ restaurant = {} }) => {
     const {
@@ -29,6 +30,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
     const ratingArray = Array.from(new Array(Math.floor(rating)));
     return (
         <RestaurantCard elevation={5}>
+            <Favorite restaurant={restaurant}/>
             <RestaurantCardCover source={{ uri: photos[0] }}/>
             <Info>
                 <Text variant="label"> {name} </Text>
