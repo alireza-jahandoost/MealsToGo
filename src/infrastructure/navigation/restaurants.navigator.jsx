@@ -1,5 +1,4 @@
 import React from 'react';
-import {Text} from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import RestaurantsScreen from '../../features/restaurants/screens/restaurants/restaurants.screen';
