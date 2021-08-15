@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import { List, Avatar } from 'react-native-paper';
+import FadeInAnimation from '../../../../components/animations/fade-in/fade-in.animation';
 
 import {
     AvatarContainer,
@@ -13,6 +14,7 @@ const SettingsScreen = ({navigation}) => {
     const {onSignOut, isLoading, user} = useContext(AuthenticationContext);
     return (
         <SafeArea>
+            <FadeInAnimation>
             <AvatarContainer>
                 <Avatar.Icon
                     size={180}
@@ -33,6 +35,7 @@ const SettingsScreen = ({navigation}) => {
                     onPress={() => onSignOut()}
                 />
             </List.Section>
+            </FadeInAnimation>
         </SafeArea>
     )
 }
