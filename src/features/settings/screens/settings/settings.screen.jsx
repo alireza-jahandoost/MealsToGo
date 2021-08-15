@@ -1,23 +1,38 @@
 import React, {useContext} from 'react';
-import {Button} from 'react-native';
+import { List, Avatar } from 'react-native-paper';
+
+import {
+    AvatarContainer,
+    Email,
+} from './settings.styles';
 import {SafeArea} from '../../../../components/utility/safe-area.component';
 import {AuthenticationContext} from '../../../../services/authentication/authentication.context';
 import Loader from '../../../../components/loader/loader.component';
 
-const SettingsScreen = () => {
-    const {onSignOut, isLoading} = useContext(AuthenticationContext);
+const SettingsScreen = ({navigation}) => {
+    const {onSignOut, isLoading, user} = useContext(AuthenticationContext);
     return (
         <SafeArea>
-            {
-                isLoading ? (
-                    <Loader />
-                ) : (
-                    <Button
-                        title = "Logout"
-                        onPress={onSignOut}
-                    />
-                )
-            }
+            <AvatarContainer>
+                <Avatar.Icon
+                    size={180}
+                    icon="human"
+                    backgroundColor="#27decd"
+                />
+            <Email variant="label"> {user.email} </Email>
+            </AvatarContainer>
+            <List.Section>
+                <List.Item
+                    title="Favorites"
+                    left={() => <List.Icon icon="heart" />}
+                    onPress={() => navigation.navigate("Favorites")}
+                />
+                <List.Item
+                    title="Logout"
+                    left={() => <List.Icon color="#000" icon="logout" />}
+                    onPress={() => onSignOut()}
+                />
+            </List.Section>
         </SafeArea>
     )
 }

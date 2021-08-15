@@ -1,9 +1,11 @@
 import React from 'react';
+import LottieView from 'lottie-react-native';
 import {
     Background,
     InnerContainer,
     BackgroundOpacity,
-    Title
+    Title,
+    AnimationContainer
 } from './main-container.styles';
 import {SafeArea} from '../../../../components/utility/safe-area.component';
 
@@ -15,6 +17,15 @@ const MainContainer = ({children}) => {
                 resizeMode="cover"
             >
                 <BackgroundOpacity />
+                <AnimationContainer>
+                    <LottieView
+                        key="animation"
+                        loop
+                        autoPlay
+                        resizeMode="cover"
+                          source={require('../../../../../assets/watermelon.json')}
+                    />
+                </AnimationContainer>
                 <Title> Meals To Go </Title>
                 <InnerContainer>
                     {children}

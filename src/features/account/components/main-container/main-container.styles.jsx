@@ -24,6 +24,13 @@ export const InnerContainer = styled.View`
     margin-top: ${space[3]}
 `
 
+export const AnimationContainer = styled.View`
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top: 0px;
+`
+
 export const Title = styled(Text).attrs({
     variant: "label"
 })`

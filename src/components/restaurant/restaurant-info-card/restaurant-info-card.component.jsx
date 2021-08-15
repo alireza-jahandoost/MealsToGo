@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from '../../../../components/typography/text.component';
+import {Text} from '../../typography/text.component';
 import {
     Section,
     Star,
@@ -11,8 +11,8 @@ import {
     RestaurantIcon,
     InnerSection,
 } from './restaurant-info-card.styles';
-import {Spacer} from '../../../../components/spacer/spacer.component';
-import Favorite from '../../../../components/favorite/favorite.component';
+import {Spacer} from '../../spacer/spacer.component';
+import Favorite from '../../favorite/favorite.component';
 
 const RestaurantInfoCard = ({ restaurant = {} }) => {
     const {
@@ -38,7 +38,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
                     <Rating>
                         {
                             ratingArray.map((elem, idx) =>
-                                <Star key={`star-${placeId}-${idx}`} source={require('../../../../../assets/star.png')} />
+                                <Star key={`star-${placeId}-${idx}`} source={require('../../../../assets/star.png')} />
                             )
                         }
                     </Rating>
@@ -52,7 +52,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
                         {
                              isOpenNow &&
                              <Spacer position="left" size="large">
-                                 <OpenIcon source={require('../../../../../assets/open.png')} />
+                                 <OpenIcon source={require('../../../../assets/open.png')} />
                              </Spacer>
                         }
                         <Spacer position="left" size="large">
