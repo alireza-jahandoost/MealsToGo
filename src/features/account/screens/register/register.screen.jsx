@@ -34,17 +34,6 @@ const LoginScreen = () => {
             />
             <Spacer position="top" size="large">
                 <AuthInput
-                  label="Confirm Password"
-                  autoCapitalize="none"
-                  textContentType="password"
-                  keyboardType="default"
-                  secureTextEntry
-                  value={confirmPassword}
-                  onChangeText={text => setConfirmPassword(text)}
-                />
-            </Spacer>
-            <Spacer position="top" size="large">
-                <AuthInput
                   label="Password"
                   autoCapitalize="none"
                   textContentType="password"
@@ -52,6 +41,17 @@ const LoginScreen = () => {
                   secureTextEntry
                   value={password}
                   onChangeText={text => setPassword(text)}
+                />
+            </Spacer>
+            <Spacer position="top" size="large">
+                <AuthInput
+                  label="Confirm Password"
+                  autoCapitalize="none"
+                  textContentType="password"
+                  keyboardType="default"
+                  secureTextEntry
+                  value={confirmPassword}
+                  onChangeText={text => setConfirmPassword(text)}
                 />
             </Spacer>
             <Spacer position="top" size="large">
