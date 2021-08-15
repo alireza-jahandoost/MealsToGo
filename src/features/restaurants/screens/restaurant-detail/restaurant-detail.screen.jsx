@@ -6,7 +6,6 @@ import RestaurantDetailMenu from '../../components/restaurant-detail-menu/restau
 
 const RestaurantDetailScreen = ({route}) => {
     const {restaurant} = route.params;
-    console.log('here', restaurant);
     return (
         <SafeArea>
             <RestaurantInfoCard restaurant={restaurant} />
